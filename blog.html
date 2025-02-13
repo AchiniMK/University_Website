@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>University Website</title>
+</head>
+<body>
+    <section class="sub-header">
+         <nav>
+             <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+             <div class="nav-links" id="navLinks">
+                 <i class="fa fa-times" onclick="hideMenu()"></i>
+             <ul>
+                 <li><a href="index.html">HOME</a></li>
+                 <li><a href="about.html">ABOUT US</a></li>
+                 <li><a href="course.html">COURSES</a></li>
+                 <li><a href="blog.html">BLOG</a></li>
+                 <li><a href="contact.html">CONTACT</a></li>
+             </ul>
+         </div>
+         <i class="fa fa-bars" onclick="showMenu()"></i>
+         </nav>
+         <h1>Our Certificate & Online Programs For 2025</h1>
+     </section>
+
+ <!------ Blog page content ------>
+     <section class="blog-content">
+
+        <div class="row">
+            <div class="blog-left">
+                <img src="images/certificate.jpg" alt="">
+                <h2>Our Certificate & Online Programs For 2025</h2>
+                <p>As we move into 2025, Titan Valley University continues to expand its commitment to accessible and high-quality education through our certificate and online programs. Designed for professionals, lifelong learners, and students looking to enhance their skills, these programs offer flexible learning opportunities that fit your schedule.</p>
+                <h3>Why Choose Our Certificate & Online Programs?</h4>
+                <p>Our programs are tailored to meet industry demands, ensuring that students gain practical knowledge and hands-on experience. With expert faculty, interactive learning modules, and the convenience of online access, you can advance your education without putting your career on hold.</p>
+                <h4>Featured Certificate Programs</h4>
+                <ul>
+                    <li>Business & Management: Enhance your leadership skills with specialized courses in project management, entrepreneurship, and business strategy.</li>
+                    <li>Technology & IT: Stay ahead in the digital era with certifications in cybersecurity, data analytics, and software development.</li>
+                    <li>Healthcare & Wellness: Gain essential knowledge in healthcare administration, public health, and mental wellness support.</li>
+                    <li>Education & Teaching: Prepare for a career in education with programs focusing on instructional design, special education, and online teaching strategies.</li>
+                </ul>
+                <h4>Flexible Online Learning</h4>
+                <p>Our online programs are designed to provide a seamless learning experience with engaging content, discussion forums, and real-time instructor support. Whether you are looking to upskill, change careers, or expand your expertise, our online courses allow you to learn at your own pace from anywhere in the world.</p>
+                <h4>Enroll Today</h4>
+                <p>Start your journey toward professional growth and academic success with Titan Valley University. Our 2025 certificate and online programs are now open for enrollment. Visit our website to explore the full range of courses and take the next step in achieving your goals.<br>Stay ahead in your field with Titan Valley University—where knowledge meets opportunity!</p>
+                <div class="comment-box">
+                    <h3>Leave a comment</h3>
+                    <form class="comment-form">
+                        <input type="text" placeholder="Enter Name">
+                        <input type="email" placeholder="Enter Email">
+                        <textarea rows="5" placeholder="Your comment"></textarea>
+                        <button type="submit" class="hero-btn explore-btn">POST COMMENT</button>
+                    </form>
+                </div>
+                
+            </div>
+            <div class="blog-right">
+                <h3>Post Categories</h3>
+                <div>
+                    <span>Business Analytics</span>
+                    <span>25</span>
+                </div>
+                <div>
+                    <span>Data Science</span>
+                    <span>21</span>
+                </div>
+                <div>
+                    <span>Machine Learning</span>
+                    <span>28</span>
+                </div>
+                <div>
+                    <span>Computer Science</span>
+                    <span>15</span>
+                </div>
+                <div>
+                    <span>Journalism</span>
+                    <span>38</span>
+                </div>
+              
+
+            </div>
+    
+        </div>
+
+     </section>
+
+ <!------ Footer ------>
+ <section class="footer">
+     <h4>About Us</h4>
+     <p>We are a forward-thinking university dedicated to providing high-quality education, fostering innovation, and supporting student success. <br> Our diverse and inclusive community is committed to excellence in teaching, research, and personal growth.</p>
+     <div class="icons">
+         <i class="fa fa-facebook"></i>
+         <i class="fa fa-twitter"></i>
+         <i class="fa fa-instagram"></i>
+         <i class="fa fa-linkedin"></i>
+     </div>
+     <p>Made With <i class="fa fa-heart-o"></i> AK Designs</p>
+ </section>
+ 
+ <!------ JavaScript for Toggle Menu and Show More/Show Less ------>
+ <script>
+     var navLinks = document.getElementById("navLinks");
+ 
+     function showMenu() {
+         navLinks.style.right = "0";
+     }
+ 
+     function hideMenu() {
+         navLinks.style.right = "-200px";
+     }
+ 
+     function showMoreContent() {
+         var extraContent = document.getElementById("extraContent");
+         var exploreBtn = document.querySelector(".explore-btn");
+         var showLessBtn = document.getElementById("showLessBtn");
+         
+         // Show the additional content
+         extraContent.style.display = "block";
+         
+         // Hide the Explore Now button
+         exploreBtn.style.display = "none";
+         
+         // Show the Show Less button
+         showLessBtn.style.display = "inline-block";
+     }
+ 
+     function showLessContent() {
+         var extraContent = document.getElementById("extraContent");
+         var exploreBtn = document.querySelector(".explore-btn");
+         var showLessBtn = document.getElementById("showLessBtn");
+         
+         // Hide the additional content
+         extraContent.style.display = "none";
+         
+         // Show the Explore Now button again
+         exploreBtn.style.display = "inline-block";
+         
+         // Hide the Show Less button
+         showLessBtn.style.display = "none";
+     }
+ </script>
+ 
+ </body>
+  
+</html>
