@@ -52,13 +52,15 @@
                 <p>Start your journey toward professional growth and academic success with Titan Valley University. Our 2025 certificate and online programs are now open for enrollment. Visit our website to explore the full range of courses and take the next step in achieving your goals.<br>Stay ahead in your field with Titan Valley University—where knowledge meets opportunity!</p>
                 <div class="comment-box">
                     <h3>Leave a comment</h3>
-                    <form class="comment-form">
-                        <input type="text" placeholder="Enter Name">
-                        <input type="email" placeholder="Enter Email">
-                        <textarea rows="5" placeholder="Your comment"></textarea>
+                    <form class="comment-form" id="commentForm">
+                        <input type="text" id="name" placeholder="Enter Name" required>
+                        <input type="email" id="email" placeholder="Enter Email" required>
+                        <textarea id="commentText" rows="5" placeholder="Your comment" required></textarea>
                         <button type="submit" class="hero-btn explore-btn">POST COMMENT</button>
                     </form>
                 </div>
+                
+                <div id="commentsContainer"></div> 
                 
             </div>
             <div class="blog-right">
@@ -115,36 +117,35 @@
      function hideMenu() {
          navLinks.style.right = "-200px";
      }
+
+     document.getElementById('commentForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from refreshing the page
+    
+    // Get values from input fields
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const commentText = document.getElementById('commentText').value;
+
+    // Create a new comment container
+    const commentContainer = document.createElement('div');
+    commentContainer.classList.add('comment');
+
+    // Display comment details
+    const commentHtml = `
+        <h4>${name}</h4>
+        <p><strong>Email:</strong> ${email}</p>
+        <p>${commentText}</p>
+    `;
+    commentContainer.innerHTML = commentHtml;
+
+    // Append the new comment to the comments container
+    document.getElementById('commentsContainer').appendChild(commentContainer);
+
+    // Clear the form after submission
+    document.getElementById('commentForm').reset();
+});
+
  
-     function showMoreContent() {
-         var extraContent = document.getElementById("extraContent");
-         var exploreBtn = document.querySelector(".explore-btn");
-         var showLessBtn = document.getElementById("showLessBtn");
-         
-         // Show the additional content
-         extraContent.style.display = "block";
-         
-         // Hide the Explore Now button
-         exploreBtn.style.display = "none";
-         
-         // Show the Show Less button
-         showLessBtn.style.display = "inline-block";
-     }
- 
-     function showLessContent() {
-         var extraContent = document.getElementById("extraContent");
-         var exploreBtn = document.querySelector(".explore-btn");
-         var showLessBtn = document.getElementById("showLessBtn");
-         
-         // Hide the additional content
-         extraContent.style.display = "none";
-         
-         // Show the Explore Now button again
-         exploreBtn.style.display = "inline-block";
-         
-         // Hide the Show Less button
-         showLessBtn.style.display = "none";
-     }
  </script>
  
  </body>
